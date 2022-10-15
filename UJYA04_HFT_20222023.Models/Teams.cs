@@ -2,7 +2,7 @@
 
 namespace UJYA04_HFT_20222023.Models
 {
-    public class Class1
+    public class Teams
     {
     }
 }
