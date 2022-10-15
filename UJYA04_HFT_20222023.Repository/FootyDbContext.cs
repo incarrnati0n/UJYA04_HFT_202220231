@@ -2,7 +2,8 @@
 
 namespace UJYA04_HFT_20222023.Repository
 {
-    public class Class1
+    public class FootyDbContext : DbContext
     {
+
     }
 }
