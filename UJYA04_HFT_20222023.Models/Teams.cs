@@ -14,7 +14,6 @@ namespace UJYA04_HFT_20222023.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TeamId { get; set; }
         public int ManagerId { get; set; }
-        public int PlayerId { get; set; }
         [StringLength(240)]
         public string TeamName { get; set; }
         [StringLength(240)]
@@ -37,11 +36,10 @@ namespace UJYA04_HFT_20222023.Models
             string[] split = line.Split('#');
             TeamId = int.Parse(split[0]);
             ManagerId = int.Parse(split[1]);
-            PlayerId = int.Parse(split[2]);
-            TeamName = split[3];
-            TeamOwner = split[4];
-            TeamFoundedYear = int.Parse(split[5]);
-            TeamStadiumName = split[6];
+            TeamName = split[2];
+            TeamOwner = split[3];
+            TeamFoundedYear = int.Parse(split[4]);
+            TeamStadiumName = split[5];
             Player = new HashSet<Players>();
         }
 

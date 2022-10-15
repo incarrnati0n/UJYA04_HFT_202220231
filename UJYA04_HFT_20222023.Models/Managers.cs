@@ -31,10 +31,9 @@ namespace UJYA04_HFT_20222023.Models
             string[] split = line.Split('#');
             ManagerId = int.Parse(split[0]);
             TeamsId = int.Parse(split[1]);
-            PlayerId = int.Parse(split[2]);
-            ManagerName = split[3];
-            ManagerAge = int.Parse(split[4]);
-            ManagerSalary = double.Parse(split[5]);
+            ManagerName = split[2];
+            ManagerAge = int.Parse(split[3]);
+            ManagerSalary = double.Parse(split[4]);
         }
 
 
