@@ -45,7 +45,7 @@ namespace UJYA04_HFT_20222023.Repository
             {
                 new Teams("1#1#Chelsea FC#Todd Boehly#1905#Stanford Bridge"),
                 new Teams("2#2#AC Milan#RedBird Capital Partners LLC#1899#San Siro"),
-                new Teams("3#3#FC Bayern München#1900#Allianz Arena")
+                new Teams("3#3#FC Bayern München#Herbert Hainer#1900#Allianz Arena")
             });
 
             modelBuilder.Entity<Managers>().HasData(new Managers[]

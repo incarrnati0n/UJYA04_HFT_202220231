@@ -10,7 +10,6 @@ namespace UJYA04_HFT_20222023.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ManagerId { get; set; }
         public int TeamsId { get; set; }
-        public int PlayerId { get; set; }
         [StringLength(240)]
         public string ManagerName { get; set; }
         [Range(1, 99)]
