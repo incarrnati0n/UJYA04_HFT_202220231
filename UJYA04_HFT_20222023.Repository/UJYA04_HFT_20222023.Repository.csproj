@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="FootyDb.mdf" />
+    <None Remove="FooballDb.mdf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="FootyDb.mdf">
+    <Content Include="FooballDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
