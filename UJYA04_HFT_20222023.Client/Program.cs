@@ -6,7 +6,7 @@ namespace UJYA04_HFT_20222023.Client
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }

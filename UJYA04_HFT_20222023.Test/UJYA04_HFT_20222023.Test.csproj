@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\UJYA04_HFT_20222023.Logic\UJYA04_HFT_20222023.Logic.csproj" />
     <ProjectReference Include="..\UJYA04_HFT_20222023.Models\UJYA04_HFT_20222023.Models.csproj" />
+    <ProjectReference Include="..\UJYA04_HFT_20222023.Repository\UJYA04_HFT_20222023.Repository.csproj" />
   </ItemGroup>
 
 </Project>
