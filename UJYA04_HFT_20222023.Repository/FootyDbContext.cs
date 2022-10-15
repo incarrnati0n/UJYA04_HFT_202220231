@@ -30,7 +30,20 @@ namespace UJYA04_HFT_20222023.Repository
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Teams>(team => team
-            .HasOne<Managers>());
+            .HasOne(team => team.Manager)
+            .WithOne(manager => manager.Team)
+            .HasForeignKey<Teams>(team => team.ManagerId)
+            .OnDelete(DeleteBehavior.Cascade));
+
+            modelBuilder.Entity<Players>(player => player
+            .HasOne(player => player.Team)
+            .WithMany(team => team.Player)
+            .HasForeignKey(player => player.TeamId)
+            .OnDelete(DeleteBehavior.Cascade));
+
+            
+
+
 
 
 

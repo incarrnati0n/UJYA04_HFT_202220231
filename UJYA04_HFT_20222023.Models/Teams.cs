@@ -29,7 +29,7 @@ namespace UJYA04_HFT_20222023.Models
 
         public Teams()
         {
-
+            Player = new HashSet<Players>();
         }
 
         public Teams(string line)
@@ -42,6 +42,7 @@ namespace UJYA04_HFT_20222023.Models
             TeamOwner = split[4];
             TeamFoundedYear = int.Parse(split[5]);
             TeamStadiumName = split[6];
+            Player = new HashSet<Players>();
         }
 
     }
