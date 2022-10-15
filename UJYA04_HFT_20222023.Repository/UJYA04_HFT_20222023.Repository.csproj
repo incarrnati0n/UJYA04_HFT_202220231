@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FootyDb.mdf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="FootyDb.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\UJYA04_HFT_20222023.Models\UJYA04_HFT_20222023.Models.csproj" />
   </ItemGroup>
 
