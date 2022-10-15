@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UJYA04_HFT_20222023.Models
 {
-    internal class Managers
+    public class Managers
     {
         public int TeamId { get; set; }
         public int ManagerId { get; set; }
