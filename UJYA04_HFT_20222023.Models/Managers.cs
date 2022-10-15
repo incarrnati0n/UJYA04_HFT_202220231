@@ -18,6 +18,9 @@ namespace UJYA04_HFT_20222023.Models
         [Range(1000000, 5000000)]
         public double ManagerSalary { get; set; }
 
+        public virtual Teams Team { get; set; }
+
+
         public Managers()
         {
 

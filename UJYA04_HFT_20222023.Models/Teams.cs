@@ -23,7 +23,9 @@ namespace UJYA04_HFT_20222023.Models
         public int TeamFoundedYear { get; set; }
         [StringLength(240)]
         public string TeamStadiumName { get; set; }
+        public virtual Managers Manager { get; set; }
 
+        public virtual ICollection<Players> Player { get; set; }
 
         public Teams()
         {

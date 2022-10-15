@@ -25,9 +25,18 @@ namespace UJYA04_HFT_20222023.Repository
                 optionsBuilder
                 .UseSqlServer(conn);
             }
-
-            
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Teams>(team => team
+            .HasOne<Managers>());
+
+
+
+        }
+
+
 
 
     }
