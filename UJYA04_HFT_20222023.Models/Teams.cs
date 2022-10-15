@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +10,18 @@ namespace UJYA04_HFT_20222023.Models
 {
     public class Teams
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int TeamId { get; set; }
         public int ManagerId { get; set; }
         public int PlayerId { get; set; }
+        [StringLength(240)]
         public string TeamName { get; set; }
+        [StringLength(240)]
         public string TeamOwner { get; set; }
+        [Range(1000, 2000)]
         public int TeamFoundedYear { get; set; }
+        [StringLength(240)]
         public string TeamStadiumName { get; set; }
 
 

@@ -1,14 +1,21 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UJYA04_HFT_20222023.Models
 {
     public class Managers
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ManagerId { get; set; }
         public int TeamsId { get; set; }
         public int PlayerId { get; set; }
+        [StringLength(240)]
         public string ManagerName { get; set; }
+        [Range(1, 99)]
         public int ManagerAge { get; set; }
+        [Range(1000000, 5000000)]
         public double ManagerSalary { get; set; }
 
         public Managers()
