@@ -20,10 +20,13 @@ namespace UJYA04_HFT_20222023.Repository
         {
             if (!optionsBuilder.IsConfigured)
             {
-                string conn = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\imcon\Desktop\Egyetem folder\HFT\UJYA04_HFT_20222023\UJYA04_HFT_20222023.Repository\FooballDb.mdf; Integrated Security = True;MultipleActiveResultSets=True";
+                //string conn = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = C:\Users\imcon\Desktop\Egyetem folder\HFT\UJYA04_HFT_20222023\UJYA04_HFT_20222023.Repository
+                //\FooballDb.mdf; Integrated Security = True;MultipleActiveResultSets=True";
 
                 optionsBuilder
-                .UseSqlServer(conn);
+                //.UseSqlServer(conn)
+                .UseInMemoryDatabase("FootyDatabase")
+                .UseLazyLoadingProxies();
             }
         }
 

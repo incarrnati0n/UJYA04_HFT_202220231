@@ -6,6 +6,9 @@ namespace UJYA04_HFT_20222023.Client
 {
     internal class Program
     {
+        //TODO lazy loading teljes megírása, illetve IRepository interface és model osztályokban a repository classest megcsinálni
+
+
         static void Main(string[] args)
         {
             FootyDbContext ctx = new FootyDbContext();
