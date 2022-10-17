@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using UJYA04_HFT_20222023.Models;
+
+namespace UJYA04_HFT_20222023.Repository
+{
+    public  class ManagersRepository : Repository<Managers>, IRepository<Managers>
+    {
+        public ManagersRepository(FootyDbContext ctx) : base(ctx)
+        {
+
+        }
+
+        public override Managers Read(int id)
+        {
+            return ctx.Managers.FirstOrDefault(m => m.ManagerId == id);
+        }
+
+        public override void Update(Managers item)
+        {
+            var old = Read(item.ManagerId);
+            foreach (var prop in old.GetType().GetProperties())
+            {
+                prop.SetValue(old, prop.GetValue(item));
+            }
+            ctx.SaveChanges();
+        }
+    }
+}
