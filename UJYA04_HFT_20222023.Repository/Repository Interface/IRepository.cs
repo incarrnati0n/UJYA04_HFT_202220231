@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UJYA04_HFT_20222023.Repository
 {
-    internal interface IRepository<T> where T : class
+    public interface IRepository<T> where T : class
     {
         IQueryable<T> ReadAll();
         T Read(int id);

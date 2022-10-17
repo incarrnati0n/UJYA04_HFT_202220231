@@ -6,7 +6,7 @@ namespace UJYA04_HFT_20222023.Client
 {
     internal class Program
     {
-        //TODO model osztályokban a repository classest megcsinálni
+        //TODO Creating CRUD methods in Logic layer and creating non-cruds also 
 
 
         static void Main(string[] args)
