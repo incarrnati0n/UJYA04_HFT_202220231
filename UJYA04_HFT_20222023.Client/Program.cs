@@ -6,9 +6,7 @@ namespace UJYA04_HFT_20222023.Client
 {
     internal class Program
     {
-        //TODO Creating CRUD methods in Logic layer and creating non-cruds also 
-
-
+        //TODO Need to create non-crud methods and to start unit tests!
         static void Main(string[] args)
         {
             FootyDbContext ctx = new FootyDbContext();
