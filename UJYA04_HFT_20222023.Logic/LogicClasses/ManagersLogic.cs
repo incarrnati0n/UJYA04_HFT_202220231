@@ -8,7 +8,7 @@ using UJYA04_HFT_20222023.Repository;
 
 namespace UJYA04_HFT_20222023.Logic.LogicClasses
 {
-    internal class ManagersLogic
+    internal class ManagersLogic : IManagersLogic
     {
         IRepository<Managers> repo;
 

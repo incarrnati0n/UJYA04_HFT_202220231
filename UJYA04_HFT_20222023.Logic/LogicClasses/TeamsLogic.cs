@@ -5,7 +5,7 @@ using UJYA04_HFT_20222023.Repository;
 
 namespace UJYA04_HFT_20222023.Logic
 {
-    public class TeamsLogic
+    public class TeamsLogic : ITeamsLogic
     {
         IRepository<Teams> repo;
 

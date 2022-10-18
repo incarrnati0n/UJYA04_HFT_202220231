@@ -8,7 +8,7 @@ using UJYA04_HFT_20222023.Repository;
 
 namespace UJYA04_HFT_20222023.Logic.LogicClasses
 {
-    internal class PlayersLogic
+    internal class PlayersLogic : IPlayersLogic
     {
         IRepository<Players> repo;
 
@@ -53,7 +53,7 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
         //NON-CRUDS
 
 
-        
+
         public IQueryable<Managers> ListPlayerByShirtNumber(int shirtnumber)
         {
             return this.repo
@@ -63,7 +63,7 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
                 .Distinct();
         }
 
-        
+
 
         public IQueryable<string> TeamsOfPlayersUnder25()
         {
@@ -74,7 +74,7 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
                 .Distinct();
         }
 
-        
+
 
         public IQueryable<Players> HighestRatingByTeamAndAge(int age, string teamname)
         {
