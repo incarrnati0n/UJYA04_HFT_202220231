@@ -8,7 +8,7 @@ using UJYA04_HFT_20222023.Repository;
 
 namespace UJYA04_HFT_20222023.Logic.LogicClasses
 {
-    internal class PlayersLogic : IPlayersLogic
+    internal class PlayersLogic
     {
         IRepository<Players> repo;
 
@@ -52,16 +52,37 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
 
         //NON-CRUDS
 
-        public double GetAverageRatingByShirtNum(int shirtnumber)
+
+        
+        public IQueryable<Managers> ListPlayerByShirtNumber(int shirtnumber)
         {
             return this.repo
                 .ReadAll()
                 .Where(p => p.PlayerShirtNum == shirtnumber)
-                .Average(p => p.Rating);
+                .Select(p => p.Team.Manager)
+                .Distinct();
         }
 
+        
 
+        public IQueryable<string> TeamsOfPlayersUnder25()
+        {
+            return this.repo
+                .ReadAll()
+                .Where(p => p.PlayerAge < 25)
+                .Select(p => p.Team.TeamName)
+                .Distinct();
+        }
 
+        
 
+        public IQueryable<Players> HighestRatingByTeamAndAge(int age, string teamname)
+        {
+            return this.repo
+                .ReadAll()
+                .Where(p => p.PlayerAge == age && p.Team.TeamName == teamname)
+                .OrderByDescending(p => p.Rating)
+                .Take(1);
+        }
     }
 }

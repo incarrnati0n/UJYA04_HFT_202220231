@@ -8,7 +8,7 @@ using UJYA04_HFT_20222023.Repository;
 
 namespace UJYA04_HFT_20222023.Logic.LogicClasses
 {
-    internal class ManagersLogic : IManagersLogic
+    internal class ManagersLogic
     {
         IRepository<Managers> repo;
 
@@ -53,11 +53,12 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
 
         //NON-CRUD methods
 
-        public double GetAverageSalary()
+        public IQueryable<string> ManagerName(Teams team)
         {
             return this.repo
                 .ReadAll()
-                .Average(m => m.ManagerSalary);
+                .Where(m => m.Team == team)
+                .Select(m => m.ManagerName);
         }
 
 

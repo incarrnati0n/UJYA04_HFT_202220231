@@ -5,7 +5,7 @@ using UJYA04_HFT_20222023.Repository;
 
 namespace UJYA04_HFT_20222023.Logic
 {
-    public class TeamsLogic : ITeamsLogic
+    public class TeamsLogic
     {
         IRepository<Teams> repo;
 
@@ -49,15 +49,12 @@ namespace UJYA04_HFT_20222023.Logic
 
         //Non-CRUD methods
 
-        public double GetAverageFoundationYear()
+        public IQueryable<double> AverageRatingInClub()
         {
             return this.repo
                 .ReadAll()
-                .Average(s => s.TeamFoundedYear);
+                .Select(t => t.Player.ToArray().Average(t => t.Rating));
+
         }
-
-
-
-
     }
 }
