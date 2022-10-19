@@ -37,10 +37,53 @@ namespace UJYA04_HFT_20222023.Test
             playersLogic = new PlayersLogic(mockPlayersRepository.Object);
         }
 
+        [Test]
+        public void PlayerRead()
+        {           
+            Assert.That(() => this.playersLogic.Read(2), Throws.Exception);  
+        }
 
         [Test]
+        public void PlayCreateWithoutException()
+        {
+            Assert.That(() => this.playersLogic.Create(new Players("7#2#Rafael Leao#17#23#84")), Throws.Nothing);
+        }
 
+        [Test]
+        public void PlayCreateWithException()
+        {
+            Assert.That(() => this.playersLogic.Create(new Players("15#2#Ádám Martin#9#27#67")), Throws.Nothing);
+        }
 
+        [Test]
+        public void PlayersUnder25()
+        {
+            Assert.That(() => this.playersLogic.TeamsOfPlayersUnder25(), Throws.Nothing);
+        }
+
+        [Test]
+        public void ListByNumber()
+        {
+            Assert.That(() => this.playersLogic.ListPlayerByShirtNumber(1), Throws.Nothing);
+        }
+
+        [Test]
+        public void HighestRating()
+        {
+            Assert.That(() => this.playersLogic.HighestRatingByTeamAndAge(23, "Chelsea FC"), Throws.Nothing);
+        }
+
+        [Test]
+        public void PlayerDelete()
+        {
+            Assert.That(() => this.playersLogic.Delete(1), Throws.Nothing);
+        }
+
+        [Test]
+        public void PlayerUpdate()
+        {
+            Assert.That(() => this.playersLogic.Update(new Players("15#2#Ádám Martin#9#27#70")), Throws.Nothing);
+        }
 
 
     }
