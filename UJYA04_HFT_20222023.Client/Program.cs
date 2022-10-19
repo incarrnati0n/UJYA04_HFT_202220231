@@ -26,8 +26,6 @@ namespace UJYA04_HFT_20222023.Client
             {
                 Console.WriteLine($"Manager name: {manager.ManagerName}, Salary: {manager.ManagerSalary}");
             }
-
-
         }
     }
 }

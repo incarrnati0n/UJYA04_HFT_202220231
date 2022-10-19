@@ -8,7 +8,7 @@ using UJYA04_HFT_20222023.Repository;
 
 namespace UJYA04_HFT_20222023.Logic.LogicClasses
 {
-    internal class PlayersLogic : IPlayersLogic
+    public class PlayersLogic : IPlayersLogic
     {
         IRepository<Players> repo;
 
