@@ -53,11 +53,11 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
 
         //NON-CRUD methods
 
-        public IQueryable<string> ManagerName(Teams team)
+        public IQueryable<string> ManagerName(int id)
         {
             return this.repo
                 .ReadAll()
-                .Where(m => m.Team == team)
+                .Where(m => m.Team.TeamId == id)
                 .Select(m => m.ManagerName);
         }
 

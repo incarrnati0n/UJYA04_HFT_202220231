@@ -65,27 +65,63 @@ namespace UJYA04_HFT_20222023.Test
         }
 
         [Test]
-        public void TeamsCreateWithoutException()
+        public void TeamCreate()
         {
             Assert.That(() => teamsLogic.Create(new Teams("6#6#Real Madrid#Florentino Perez#1902#Santiago Bernabeu")), Throws.Nothing);
         }
 
         [Test]
-        public void ManagersCreateWithoutException()
+        public void ManagerCreate()
         {
             Assert.That(() => managersLogic.Create(new Managers("6#6#Carlo Ancelotti#63#5000000")), Throws.Nothing);
         }
 
         [Test]
-        public void PlayerCreateWithoutException()
+        public void PlayerCreate()
         {
-            Assert.That(() => playersLogic.Create(new Players("16#6#Eden Hazard#7#33#84")), Throws.Exception);
+            Assert.That(() => playersLogic.Create(new Players("16#6#Eden Hazard#7#33#84")), Throws.Nothing);
         }
 
         [Test]
         public void ManagerNameTest()
         {
+            Assert.That(() => managersLogic.ManagerName(2),Throws.Nothing);
+        }
 
+        [Test]
+        public void ListPlayerByShirtNumberTest()
+        {
+            Assert.That(() => playersLogic.ListPlayerByShirtNumber(1), Throws.Nothing);
+        }
+
+        [Test]
+        public void TeamsOfPlayersUnder25Test()
+        {
+            Assert.That(() => playersLogic.TeamsOfPlayersUnder25(), Throws.Nothing);
+        }
+
+        [Test]
+        public void HighestRatingByTeamAndAgeTest()
+        {
+            Assert.That(() => playersLogic.HighestRatingByTeamAndAge(23, "Chelsea FC"), Throws.Nothing);
+        }
+
+        [Test]
+        public void AverageRatingInClubTest()
+        {
+            Assert.That(() => teamsLogic.AverageRatingInClub(), Throws.Nothing);
+        }
+
+        [Test]
+        public void PlayerDelete()
+        {
+            Assert.That(() => playersLogic.Delete(4), Throws.Nothing);
+        }
+
+        [Test]
+        public void ManagerDelete()
+        {
+            Assert.That(() => managersLogic.Delete(3), Throws.Nothing);
         }
 
 

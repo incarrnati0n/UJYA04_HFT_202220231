@@ -7,7 +7,7 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
     {
         void Create(Managers item);
         void Delete(int id);
-        IQueryable<string> ManagerName(Teams team);
+        IQueryable<string> ManagerName(int id);
         Managers Read(int id);
         IQueryable<Managers> ReadAll();
         void Update(Managers item);
