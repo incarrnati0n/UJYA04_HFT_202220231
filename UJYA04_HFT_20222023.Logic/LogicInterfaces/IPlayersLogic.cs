@@ -3,7 +3,7 @@ using UJYA04_HFT_20222023.Models;
 
 namespace UJYA04_HFT_20222023.Logic.LogicClasses
 {
-    internal interface IPlayersLogic
+    public interface IPlayersLogic
     {
         void Create(Players item);
         void Delete(int id);
