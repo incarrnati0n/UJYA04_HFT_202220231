@@ -1,5 +1,4 @@
-﻿using UJYA04_HFT_20222023.Logic;
-using UJYA04_HFT_20222023.Models;
+﻿using UJYA04_HFT_20222023.Models;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using UJYA04_HFT_20222023.Logic.LogicClasses;

@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using UJYA04_HFT_20222023.Logic;
 using UJYA04_HFT_20222023.Logic.LogicClasses;
 using UJYA04_HFT_20222023.Models;
 

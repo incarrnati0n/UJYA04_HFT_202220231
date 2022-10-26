@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 
-namespace GF5BAB_HFT_2022231.Client
+namespace UJYA04_HFT_20222023.Client
 {
     class RestService
     {
