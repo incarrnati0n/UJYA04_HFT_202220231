@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +24,7 @@ namespace UJYA04_HFT_20222023.Models
         public int PlayerAge { get; set; }
         [Range(1,99)]
         public int Rating { get; set; }
-        [JsonIgnore]
+        [NotMapped]
         public virtual Teams Team { get; set; }
 
         public Players()

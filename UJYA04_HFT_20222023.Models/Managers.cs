@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace UJYA04_HFT_20222023.Models
 {
@@ -17,7 +17,7 @@ namespace UJYA04_HFT_20222023.Models
         public int ManagerAge { get; set; }
         [Range(1000000, 5000000)]
         public double ManagerSalary { get; set; }
-        [JsonIgnore]
+        [NotMapped]
         public virtual Teams Team { get; set; }
 
 

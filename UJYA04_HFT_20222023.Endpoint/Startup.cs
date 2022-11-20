@@ -63,9 +63,10 @@ namespace UJYA04_HFT_20222023.Endpoint
                 await context.Response.WriteAsJsonAsync(response);
             }));
 
-
-
             app.UseRouting();
+
+            app.UseAuthorization();
+
 
             app.UseEndpoints(endpoints =>
             {

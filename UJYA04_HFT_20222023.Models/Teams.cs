@@ -1,7 +1,7 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -23,9 +23,11 @@ namespace UJYA04_HFT_20222023.Models
         public int TeamFoundedYear { get; set; }
         [StringLength(240)]
         public string TeamStadiumName { get; set; }
+        [NotMapped]
         [JsonIgnore]
         public virtual Managers Manager { get; set; }
         [JsonIgnore]
+        [NotMapped]
         public virtual ICollection<Players> Player { get; set; }
 
         public Teams()

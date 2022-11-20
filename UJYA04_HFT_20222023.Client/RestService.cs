@@ -63,7 +63,7 @@ namespace UJYA04_HFT_20222023.Client
             else
             {
                 var error = response.Content.ReadAsAsync<RestExceptionInfo>().GetAwaiter().GetResult();
-                throw new ArgumentException(error.Msg);
+                throw new ArgumentException(error.error);
             }
             return items;
         }
@@ -79,7 +79,7 @@ namespace UJYA04_HFT_20222023.Client
             else
             {
                 var error = response.Content.ReadAsAsync<RestExceptionInfo>().GetAwaiter().GetResult();
-                throw new ArgumentException(error.Msg);
+                throw new ArgumentException(error.error);
             }
             return item;
         }
@@ -95,7 +95,7 @@ namespace UJYA04_HFT_20222023.Client
             else
             {
                 var error = response.Content.ReadAsAsync<RestExceptionInfo>().GetAwaiter().GetResult();
-                throw new ArgumentException(error.Msg);
+                throw new ArgumentException(error.error);
             }
             return item;
         }
@@ -108,7 +108,7 @@ namespace UJYA04_HFT_20222023.Client
             if (!response.IsSuccessStatusCode)
             {
                 var error = response.Content.ReadAsAsync<RestExceptionInfo>().GetAwaiter().GetResult();
-                throw new ArgumentException(error.Msg);
+                throw new ArgumentException(error.error);
             }
             response.EnsureSuccessStatusCode();
         }
@@ -121,7 +121,7 @@ namespace UJYA04_HFT_20222023.Client
             if (!response.IsSuccessStatusCode)
             {
                 var error = response.Content.ReadAsAsync<RestExceptionInfo>().GetAwaiter().GetResult();
-                throw new ArgumentException(error.Msg);
+                throw new ArgumentException(error.error);
             }
 
             response.EnsureSuccessStatusCode();
@@ -135,7 +135,7 @@ namespace UJYA04_HFT_20222023.Client
             if (!response.IsSuccessStatusCode)
             {
                 var error = response.Content.ReadAsAsync<RestExceptionInfo>().GetAwaiter().GetResult();
-                throw new ArgumentException(error.Msg);
+                throw new ArgumentException(error.error);
             }
 
             response.EnsureSuccessStatusCode();
@@ -148,6 +148,6 @@ namespace UJYA04_HFT_20222023.Client
         {
 
         }
-        public string Msg { get; set; }
+        public string error { get; set; }
     }
 }

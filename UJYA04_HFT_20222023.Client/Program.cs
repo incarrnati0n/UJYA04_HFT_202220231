@@ -18,19 +18,19 @@ namespace UJYA04_HFT_20222023.Client
             {
                 Console.WriteLine("Enter player: ");
                 string player = Console.ReadLine();
-                rest.Post(new Players() { PlayerName = player}, "player");
+                rest.Post(new Players() { PlayerName = player}, "players");
             }
             else if (entity == "Team")
             {
                 Console.WriteLine("Enter team: ");
                 string team = Console.ReadLine();
-                rest.Post(new Teams() { TeamName = team}, "team");
+                rest.Post(new Teams() { TeamName = team}, "teams");
             }
             else
             {
                 Console.WriteLine("Enter manager: ");
                 string manager = Console.ReadLine();
-                rest.Post(new Managers() { ManagerName = manager }, "manager");
+                rest.Post(new Managers() { ManagerName = manager }, "managers");
             }
         }
 
@@ -38,7 +38,7 @@ namespace UJYA04_HFT_20222023.Client
         {
             if (entity == "Player")
             {
-                List<Players> players = rest.Get<Players>("player");
+                List<Players> players = rest.Get<Players>("players");
                 foreach (var player in players)
                 {
                     Console.WriteLine($"{player.PlayerId} : {player.PlayerName}");
@@ -46,7 +46,7 @@ namespace UJYA04_HFT_20222023.Client
             }
             else if (entity == "Manager")
             {
-                List<Managers> managers = rest.Get<Managers>("manager");
+                List<Managers> managers = rest.Get<Managers>("managers");
                 foreach (var manager in managers)
                 {
                     Console.WriteLine($"{manager.ManagerId} : {manager.ManagerName}");
@@ -54,7 +54,7 @@ namespace UJYA04_HFT_20222023.Client
             }
             else
             {
-                List<Teams> teams = rest.Get<Teams>("team");
+                List<Teams> teams = rest.Get<Teams>("teams");
                 foreach (var team in teams)
                 {
                     Console.WriteLine($"{team.TeamId} : {team.TeamName}");
@@ -69,31 +69,31 @@ namespace UJYA04_HFT_20222023.Client
             {
                 Console.Write("Enter Player's id to update: ");
                 int id = int.Parse(Console.ReadLine());
-                Players one = rest.Get<Players>(id, "player");
+                Players one = rest.Get<Players>(id, "players");
                 Console.Write($"New name [old: {one.PlayerName}]: ");
                 string name = Console.ReadLine();
                 one.PlayerName = name;
-                rest.Put(one, "player");
+                rest.Put(one, "players");
             }
             else if (entity == "Manager")
             {
                 Console.Write("Enter Manager's id to update: ");
                 int id = int.Parse(Console.ReadLine());
-                Managers one = rest.Get<Managers>(id, "manager");
+                Managers one = rest.Get<Managers>(id, "managers");
                 Console.Write($"New name [old: {one.ManagerName}]: ");
                 string name = Console.ReadLine();
                 one.ManagerName = name;
-                rest.Put(one, "manager");
+                rest.Put(one, "managers");
             }
             else
             {
                 Console.Write("Enter Team's id to update: ");
                 int id = int.Parse(Console.ReadLine());
-                Teams one = rest.Get<Teams>(id, "team");
+                Teams one = rest.Get<Teams>(id, "teams");
                 Console.Write($"New name [old: {one.TeamName}]: ");
                 string name = Console.ReadLine();
                 one.TeamName = name;
-                rest.Put(one, "team");
+                rest.Put(one, "teams");
             }
         }
 
@@ -103,27 +103,27 @@ namespace UJYA04_HFT_20222023.Client
             {
                 Console.Write("Enter Player's id to delete: ");
                 int id = int.Parse(Console.ReadLine());
-                rest.Delete(id, "player");
+                rest.Delete(id, "players");
             }
             else if (entity == "Manager")
             {
                 Console.WriteLine("Enter Manager's id to delete: ");
                 int id = int.Parse(Console.ReadLine());
-                rest.Delete(id, "manager");
+                rest.Delete(id, "managers");
             }
             else
             {
                 Console.WriteLine("Enter Team's id to delete: ");
                 int id = int.Parse(Console.ReadLine());
-                rest.Delete(id, "team");
+                rest.Delete(id, "teams");
             }
         }
 
         static void Main(string[] args)
         {
-
-            rest = new RestService("http://localhost:65535", "team");
-
+            
+            rest = new RestService("http://localhost:24518/", "Teams");
+            
             var playerSubMenu = new ConsoleMenu(args, level: 1)
                .Add("List", () => List("Player"))
                .Add("Create", () => Create("Player"))
