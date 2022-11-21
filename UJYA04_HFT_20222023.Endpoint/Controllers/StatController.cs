@@ -44,7 +44,7 @@ namespace UJYA04_HFT_20222023.Endpoint.Controllers
             return this.playersLogic.TeamsOfPlayersUnder25();
         }
 
-        [HttpGet("{age, teamname}")]
+        [HttpGet("{age},{teamname}")]
         public IEnumerable<Players> HighestRatingByTeamAndAge(int age, string teamname)
         {
             return this.playersLogic.HighestRatingByTeamAndAge(age, teamname);

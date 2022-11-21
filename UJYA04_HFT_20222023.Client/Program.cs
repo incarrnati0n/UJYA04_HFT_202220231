@@ -188,10 +188,10 @@ namespace UJYA04_HFT_20222023.Client
             int age = int.Parse(Console.ReadLine());
             Console.WriteLine("Team name: ");
             string teamname = Console.ReadLine();
-            var stuff = rest.Get<Players>($"stat/HighestRatingByTeamAndAge/{age}{teamname}");
+            var stuff = rest.Get<Players>($"stat/HighestRatingByTeamAndAge/{age},{teamname}");
             foreach (var item in stuff)
             {
-                Console.WriteLine($"The team");
+                Console.WriteLine($"{item.PlayerName} --- {item.Rating}");
             }
             Console.ReadLine();
         }
