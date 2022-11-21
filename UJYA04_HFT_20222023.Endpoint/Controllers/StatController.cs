@@ -21,7 +21,7 @@ namespace UJYA04_HFT_20222023.Endpoint.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<double> AverageRatingInClub()
+        public IEnumerable<TeamInfo> AverageRatingInClub()
         {
             return this.teamsLogic.AverageRatingInClub();
         }

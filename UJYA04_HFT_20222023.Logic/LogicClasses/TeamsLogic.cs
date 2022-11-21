@@ -9,9 +9,6 @@ namespace UJYA04_HFT_20222023.Logic
     {
         IRepository<Teams> repo;
 
-
-        //CRUD methods
-
         public TeamsLogic(IRepository<Teams> repo)
         {
             this.repo = repo;
@@ -47,14 +44,20 @@ namespace UJYA04_HFT_20222023.Logic
             this.repo.Update(item);
         }
 
-        //Non-CRUD methods
 
-        public IQueryable<double> AverageRatingInClub()
+
+        public IQueryable<TeamInfo> AverageRatingInClub()
         {
             return this.repo
                 .ReadAll()
-                .Select(t => t.Player.ToArray().Average(t => t.Rating));
+                .Select(t => new TeamInfo()
+                {
+                    TeamName = t.TeamName,
+                    AvgRating = t.Player.ToArray().Average(z => z.Rating)
+                });
+
 
         }
+
     }
 }

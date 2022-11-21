@@ -16,21 +16,37 @@ namespace UJYA04_HFT_20222023.Client
         {
             if (entity == "Player")
             {
-                Console.WriteLine("Enter player: ");
-                string player = Console.ReadLine();
-                rest.Post(new Players() { PlayerName = player}, "players");
+                Console.WriteLine("Enter playername: ");
+                string playername = Console.ReadLine();
+                Console.WriteLine("Enter playernumber: ");
+                int playernumber = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter playerage: ");
+                int playerage = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter playerrating: ");
+                int playerrating = int.Parse(Console.ReadLine());
+                rest.Post(new Players() { PlayerName = playername, PlayerShirtNum = playernumber, PlayerAge = playerage, Rating = playerrating}, "players");
             }
             else if (entity == "Team")
             {
-                Console.WriteLine("Enter team: ");
-                string team = Console.ReadLine();
-                rest.Post(new Teams() { TeamName = team}, "teams");
+                Console.WriteLine("Enter teamname: ");
+                string teamname = Console.ReadLine();
+                Console.WriteLine("Enter teamowner: ");
+                string teamowner = Console.ReadLine();
+                Console.WriteLine("Enter teamfoundedyear: ");
+                int teamfoundyear = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter teamstadiumname: ");
+                string teamstadiumname = Console.ReadLine();
+                rest.Post(new Teams() { TeamName = teamname, TeamOwner = teamowner, TeamFoundedYear = teamfoundyear, TeamStadiumName = teamstadiumname}, "teams");
             }
             else
             {
-                Console.WriteLine("Enter manager: ");
-                string manager = Console.ReadLine();
-                rest.Post(new Managers() { ManagerName = manager }, "managers");
+                Console.WriteLine("Enter managername: ");
+                string managername = Console.ReadLine();
+                Console.WriteLine("Enter managerage: ");
+                int managerage = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter managersalary(1000000, 5000000): ");
+                double managermoney = double.Parse(Console.ReadLine());
+                rest.Post(new Managers() { ManagerName = managername, ManagerAge=managerage,ManagerSalary=managermoney  }, "managers");
             }
         }
 
@@ -119,6 +135,67 @@ namespace UJYA04_HFT_20222023.Client
             }
         }
 
+        static void AverageRatingInClub()
+        {
+            Console.WriteLine("Average rating in clubs");
+            var clubs = rest.Get<TeamInfo>("stat/AverageRatingInClub");
+            foreach (var item in clubs)
+            {
+                Console.WriteLine($"Team name: {item.TeamName} --- Average rating: {item.AvgRating}");
+            }
+            Console.ReadLine();
+        }
+
+        static void ManagerName()
+        {
+            Console.WriteLine("Team Id: ");
+            int id = int.Parse(Console.ReadLine());
+
+            var managers = rest.Get<string>($"stat/ManagerName/{id}");
+            foreach (var manager in managers)
+            {
+                Console.WriteLine($"Manager name: {manager}");
+            }
+            Console.ReadLine();
+        }
+
+        static void TeamsOfPlayersUnder25()
+        {
+            var players = rest.Get<string>("stat/TeamsOfPlayersUnder25");
+            foreach (var item in players)
+            {
+                Console.WriteLine($"TeamName: {item}");
+            }
+            Console.ReadLine();
+        }
+
+        static void ListPlayerByShirtNumber()
+        {
+            Console.WriteLine("Enter a shirtnumber: ");
+            int number = int.Parse(Console.ReadLine());
+            var info = rest.Get<Managers>($"stat/ListPlayerByShirtNumber/{number}");
+            foreach (var item in info)
+            {
+                Console.WriteLine($"Team: {item.Team.TeamName}, Manager: {item.ManagerName}");
+            }
+            Console.ReadLine();
+        }
+
+
+        static void HighestRatingByTeamAndAge()
+        {
+            Console.WriteLine("Player age: ");
+            int age = int.Parse(Console.ReadLine());
+            Console.WriteLine("Team name: ");
+            string teamname = Console.ReadLine();
+            var stuff = rest.Get<Players>($"stat/HighestRatingByTeamAndAge/{age}{teamname}");
+            foreach (var item in stuff)
+            {
+                Console.WriteLine($"The team");
+            }
+            Console.ReadLine();
+        }
+
         static void Main(string[] args)
         {
             
@@ -145,10 +222,20 @@ namespace UJYA04_HFT_20222023.Client
                 .Add("Update", () => Update("Team"))
                 .Add("Exit", ConsoleMenu.Close);
 
+            var noncrudSubMenu = new ConsoleMenu(args, level: 1)
+                .Add("ManagerName", () => ManagerName())
+                .Add("AverageRatingInClub", () => AverageRatingInClub())
+                .Add("TeamsOfPlayersUnder25", () => TeamsOfPlayersUnder25())
+                .Add("HighestRatingByTeamAndAge", () => HighestRatingByTeamAndAge())
+                .Add("TeamHasThatNumber", () => ListPlayerByShirtNumber())
+                .Add("Exit", ConsoleMenu.Close);
+
+
             var menu = new ConsoleMenu(args, level: 0)
                 .Add("Player", () => playerSubMenu.Show())
                 .Add("Manager", () => managerSubMenu.Show())
                 .Add("Team", () => teamSubMenu.Show())
+                .Add("Non Cruds", () => noncrudSubMenu.Show())
                 .Add("Exit", ConsoleMenu.Close);
 
             menu.Show();

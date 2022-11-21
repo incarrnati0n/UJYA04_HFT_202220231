@@ -33,7 +33,7 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
 
         public Managers Read(int id)
         {
-            var managers = Read(id);
+            var managers = repo.Read(id);
             if (managers == null)
             {
                 throw new ArgumentException("This manager doesn't exist!");

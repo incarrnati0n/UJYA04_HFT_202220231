@@ -17,8 +17,6 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
             this.repo = repo;
         }
 
-        //CRUD methods
-
         public void Create(Players item)
         {
             this.repo.Create(item);
@@ -31,7 +29,7 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
 
         public Players Read(int id)
         {
-            var players = Read(id);
+            var players = repo.Read(id);
             if (players == null)
             {
                 throw new ArgumentException("The player doesn't exist");
@@ -48,9 +46,6 @@ namespace UJYA04_HFT_20222023.Logic.LogicClasses
         {
             this.repo.Update(item);
         }
-
-
-        //NON-CRUDS
 
 
 
