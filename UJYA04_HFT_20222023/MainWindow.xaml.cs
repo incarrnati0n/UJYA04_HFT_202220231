@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using UJYA04_HFT_20222023.WpfClient;
 
 namespace UJYA04_HFT_20222023
 {
@@ -42,7 +43,8 @@ namespace UJYA04_HFT_20222023
 
         private void Button_Click_Teams(object sender, RoutedEventArgs e)
         {
-
+            TeamsWindow teamsWindow = new TeamsWindow();
+            teamsWindow.Show();
         }
     }
 }
