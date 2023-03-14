@@ -2,7 +2,7 @@
 using System;
 using UJYA04_HFT_20222023.Models;
 
-namespace UJYA04_HFT_20222023.Repository
+namespace UJYA04_HFT_20222023.Repository.DBContext
 {
     public class FootyDbContext : DbContext
     {

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Linq;
+using UJYA04_HFT_20222023.Logic.LogicInterfaces;
 using UJYA04_HFT_20222023.Models;
 using UJYA04_HFT_20222023.Repository;
 
-namespace UJYA04_HFT_20222023.Logic
+namespace UJYA04_HFT_20222023.Logic.LogicClasses
 {
     public class TeamsLogic : ITeamsLogic
     {
@@ -16,12 +17,12 @@ namespace UJYA04_HFT_20222023.Logic
 
         public void Create(Teams item)
         {
-            this.repo.Create(item);
+            repo.Create(item);
         }
 
         public void Delete(int id)
         {
-            this.repo.Delete(id);
+            repo.Delete(id);
         }
 
         public Teams Read(int id)
@@ -36,19 +37,19 @@ namespace UJYA04_HFT_20222023.Logic
 
         public IQueryable<Teams> ReadAll()
         {
-            return this.repo.ReadAll();
+            return repo.ReadAll();
         }
 
         public void Update(Teams item)
         {
-            this.repo.Update(item);
+            repo.Update(item);
         }
 
 
 
         public IQueryable<TeamInfo> AverageRatingInClub()
         {
-            return this.repo
+            return repo
                 .ReadAll()
                 .Select(t => new TeamInfo()
                 {

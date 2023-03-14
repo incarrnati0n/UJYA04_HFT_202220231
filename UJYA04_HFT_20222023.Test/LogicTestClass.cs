@@ -1,7 +1,6 @@
 ﻿using NUnit.Framework;
 using UJYA04_HFT_20222023.Models;
 using UJYA04_HFT_20222023.Repository;
-using UJYA04_HFT_20222023.Logic;
 using System;
 using UJYA04_HFT_20222023.Logic.LogicClasses;
 using Moq;

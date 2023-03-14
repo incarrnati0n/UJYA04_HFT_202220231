@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UJYA04_HFT_20222023.Models;
 
-namespace UJYA04_HFT_20222023.Logic.LogicClasses
+namespace UJYA04_HFT_20222023.Logic.LogicInterfaces
 {
     public interface IManagersLogic
     {

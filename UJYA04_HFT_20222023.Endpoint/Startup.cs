@@ -6,10 +6,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using UJYA04_HFT_20222023.Logic;
 using UJYA04_HFT_20222023.Logic.LogicClasses;
+using UJYA04_HFT_20222023.Logic.LogicInterfaces;
 using UJYA04_HFT_20222023.Models;
 using UJYA04_HFT_20222023.Repository;
+using UJYA04_HFT_20222023.Repository.DBContext;
+using UJYA04_HFT_20222023.Repository.ModelRepositories;
 
 namespace UJYA04_HFT_20222023.Endpoint
 {

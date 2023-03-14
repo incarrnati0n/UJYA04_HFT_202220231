@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UJYA04_HFT_20222023.Repository.DBContext;
 
-namespace UJYA04_HFT_20222023.Repository
+namespace UJYA04_HFT_20222023.Repository.BaseRepository
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {

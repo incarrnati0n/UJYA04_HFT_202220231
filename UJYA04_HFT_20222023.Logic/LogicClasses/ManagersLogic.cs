@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UJYA04_HFT_20222023.Logic.LogicInterfaces;
 using UJYA04_HFT_20222023.Models;
 using UJYA04_HFT_20222023.Repository;
 

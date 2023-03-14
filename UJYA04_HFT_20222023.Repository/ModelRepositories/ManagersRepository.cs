@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UJYA04_HFT_20222023.Models;
+using UJYA04_HFT_20222023.Repository.BaseRepository;
+using UJYA04_HFT_20222023.Repository.DBContext;
 
-namespace UJYA04_HFT_20222023.Repository
+namespace UJYA04_HFT_20222023.Repository.ModelRepositories
 {
-    public  class ManagersRepository : Repository<Managers>, IRepository<Managers>
+    public class ManagersRepository : Repository<Managers>, IRepository<Managers>
     {
         public ManagersRepository(FootyDbContext ctx) : base(ctx)
         {

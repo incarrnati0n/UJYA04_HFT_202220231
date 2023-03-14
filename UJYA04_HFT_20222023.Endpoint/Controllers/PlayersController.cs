@@ -1,7 +1,7 @@
 ﻿using UJYA04_HFT_20222023.Models;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using UJYA04_HFT_20222023.Logic.LogicClasses;
+using UJYA04_HFT_20222023.Logic.LogicInterfaces;
 
 namespace UJYA04_HFT_20222023.Endpoint.Controllers
 {
