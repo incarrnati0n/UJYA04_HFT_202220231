@@ -17,9 +17,9 @@ namespace UJYA04_HFT_20222023.WpfClient
     /// <summary>
     /// Interaction logic for Players.xaml
     /// </summary>
-    public partial class Players : Window
+    public partial class PlayersWindow : Window
     {
-        public Players()
+        public PlayersWindow()
         {
             InitializeComponent();
         }

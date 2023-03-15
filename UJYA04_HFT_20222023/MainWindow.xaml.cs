@@ -28,12 +28,14 @@ namespace UJYA04_HFT_20222023
 
         private void Button_Click_Players(object sender, RoutedEventArgs e)
         {
-
+            PlayersWindow playersWindow = new PlayersWindow();
+            playersWindow.Show();
         }
 
         private void Button_Click_Managers(object sender, RoutedEventArgs e)
         {
-
+            ManagersWindow managersWindow = new ManagersWindow();
+            managersWindow.Show();
         }
 
         private void Button_Click_Exit(object sender, RoutedEventArgs e)

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UJYA04_HFT_20222023.WpfClient"
         mc:Ignorable="d"
-        Title="TeamsWindow" Height="450" Width="800">
+        Title="TeamsWindow" Height="464" Width="800">
     <Window.DataContext>
         <local:ManagersViewModel/>
     </Window.DataContext>
@@ -23,7 +23,11 @@
         </ListBox>
         <StackPanel Grid.Column="1">
             <Label Content="Manager Name" HorizontalContentAlignment="Center" Background="LightBlue" Padding="10"/>
-            <TextBox Text="{Binding SelectedManager.ManagerName}" Padding="10" Margin="0, 0, 0, 30"/>
+            <TextBox Text="{Binding SelectedManager.ManagerName}" Padding="10" Margin="0, 0, 0, 10"/>
+            <Label Content="Manager Age" HorizontalContentAlignment="Center" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedManager.ManagerAge}" Padding="10" Margin="0, 0, 0, 10"/>
+            <Label Content="Manager Salary" HorizontalContentAlignment="Center" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedManager.ManagerSalary}" Padding="10" Margin="0, 0, 0, 10"/>
             <Button Content="Create Manager" Command="{Binding CreateManagerCommand}" Margin="10" Padding="10"/>
             <Button Content="Delete Manager" Command="{Binding DeleteManagerCommand}" Margin="10" Padding="10"/>
             <Button Content="Update Manager" Command="{Binding UpdateManagerCommand}" Margin="10" Padding="10"/>

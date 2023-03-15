@@ -28,7 +28,7 @@ namespace UJYA04_HFT_20222023.WpfClient
                     selectedPlayer = new Players()
                     {
                         PlayerName = value.PlayerName,
-                        PlayerId = value.TeamId,
+                        PlayerId = value.PlayerId,
                     };
                 }
                 OnPropertyChanged();
@@ -54,13 +54,16 @@ namespace UJYA04_HFT_20222023.WpfClient
         {
             if (!IsInDesignMode)
             {
-                Players = new RestCollection<Players>("http://localhost:24518/", "Players", "hub");
+                Players = new RestCollection<Players>("http://localhost:24518/", "Players");
 
                 CreatePlayerCommand = new RelayCommand(() =>
                 {
                     Players.Add(new Players()
                     {
-                        PlayerName = SelectedPlayer.PlayerName
+                        PlayerName = SelectedPlayer.PlayerName,
+                        PlayerAge = SelectedPlayer.PlayerAge,
+                        PlayerShirtNum = SelectedPlayer.PlayerShirtNum,
+                        Rating = SelectedPlayer.Rating
                     });
                 });
 

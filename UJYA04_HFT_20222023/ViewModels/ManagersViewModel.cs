@@ -54,13 +54,15 @@ namespace UJYA04_HFT_20222023.WpfClient
         {
             if (!IsInDesignMode)
             {
-                Managers = new RestCollection<Managers>("http://localhost:24518/", "Managers", "hub");
+                Managers = new RestCollection<Managers>("http://localhost:24518/", "managers");
 
                 CreateManagerCommand = new RelayCommand(() =>
                 {
                     Managers.Add(new Managers()
                     {
-                        ManagerName = SelectedManager.ManagerName
+                        ManagerName = SelectedManager.ManagerName,
+                        ManagerAge = SelectedManager.ManagerAge,
+                        ManagerSalary = SelectedManager.ManagerSalary
                     });
                 });
 

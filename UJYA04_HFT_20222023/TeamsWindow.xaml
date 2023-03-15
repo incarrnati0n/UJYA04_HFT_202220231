@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UJYA04_HFT_20222023.WpfClient"
         mc:Ignorable="d"
-        Title="TeamsWindow" Height="450" Width="800">
+        Title="TeamsWindow" Height="531" Width="800">
     <Window.DataContext>
         <local:TeamsViewModel/>
     </Window.DataContext>
@@ -23,7 +23,13 @@
         </ListBox>
         <StackPanel Grid.Column="1">
             <Label Content="Team Name" HorizontalContentAlignment="Center" Background="LightBlue" Padding="10"/>
-            <TextBox Text="{Binding SelectedTeam.TeamName}" Padding="10" Margin="0, 0, 0, 30"/>
+            <TextBox Text="{Binding SelectedTeam.TeamName}" Padding="10" Margin="0, 0, 0, 10"/>
+            <Label Content="Team Owner" HorizontalContentAlignment="Center" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedTeam.TeamOwner}" Padding="10" Margin="0, 0, 0, 10"/>
+            <Label Content="Team Founded Year" HorizontalContentAlignment="Center" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedTeam.TeamFoundedYear}" Padding="10" Margin="0, 0, 0, 10"/>
+            <Label Content="Team Stadium Name" HorizontalContentAlignment="Center" Background="LightBlue" Padding="10"/>
+            <TextBox Text="{Binding SelectedTeam.TeamStadiumName}" Padding="10" Margin="0, 0, 0, 10"/>
             <Button Content="Create Team" Command="{Binding CreateTeamCommand}" Margin="10" Padding="10"/>
             <Button Content="Delete Team" Command="{Binding DeleteTeamCommand}" Margin="10" Padding="10"/>
             <Button Content="Update Team" Command="{Binding UpdateTeamCommand}" Margin="10" Padding="10"/>

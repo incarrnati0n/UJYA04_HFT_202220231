@@ -54,13 +54,16 @@ namespace UJYA04_HFT_20222023.WpfClient
         {
             if (!IsInDesignMode)
             {
-                Teams = new RestCollection<Teams>("http://localhost:24518/", "Teams", "hub");
+                Teams = new RestCollection<Teams>("http://localhost:24518/", "Teams");
 
                 CreateTeamCommand = new RelayCommand(() =>
                 {
                     Teams.Add(new Teams()
                     {
-                        TeamName = SelectedTeam.TeamName
+                        TeamName = SelectedTeam.TeamName,
+                        TeamOwner = SelectedTeam.TeamOwner,
+                        TeamFoundedYear = SelectedTeam.TeamFoundedYear,
+                        TeamStadiumName = SelectedTeam.TeamStadiumName
                     });
                 });
 
