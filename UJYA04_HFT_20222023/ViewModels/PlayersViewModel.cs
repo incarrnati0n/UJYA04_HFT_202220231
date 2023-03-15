@@ -12,8 +12,11 @@ using UJYA04_HFT_20222023.Models;
 
 namespace UJYA04_HFT_20222023.WpfClient
 {
+
     public class PlayersViewModel : ObservableRecipient
     {
+        public static Random r = new Random();
+
         public RestCollection<Players> Players { get; set; }
 
         private Players selectedPlayer;
@@ -63,7 +66,11 @@ namespace UJYA04_HFT_20222023.WpfClient
                         PlayerName = SelectedPlayer.PlayerName,
                         PlayerAge = SelectedPlayer.PlayerAge,
                         PlayerShirtNum = SelectedPlayer.PlayerShirtNum,
-                        Rating = SelectedPlayer.Rating
+                        Rating = SelectedPlayer.Rating,
+                        Team = new Teams()
+                        {
+                            TeamFoundedYear = r.Next(1000, 2001),
+                        }
                     });
                 });
 

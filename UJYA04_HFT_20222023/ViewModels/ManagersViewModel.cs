@@ -14,6 +14,7 @@ namespace UJYA04_HFT_20222023.WpfClient
 {
     public class ManagersViewModel : ObservableRecipient
     {
+        public static Random r = new Random();
         public RestCollection<Managers> Managers { get; set; }
 
         private Managers selectedManager;
@@ -62,7 +63,11 @@ namespace UJYA04_HFT_20222023.WpfClient
                     {
                         ManagerName = SelectedManager.ManagerName,
                         ManagerAge = SelectedManager.ManagerAge,
-                        ManagerSalary = SelectedManager.ManagerSalary
+                        ManagerSalary = SelectedManager.ManagerSalary,
+                        Team = new Teams()
+                        {
+                            TeamFoundedYear = r.Next(1000, 2001) 
+                        }
                     });
                 });
 
