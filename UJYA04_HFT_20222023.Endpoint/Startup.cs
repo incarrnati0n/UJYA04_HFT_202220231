@@ -69,6 +69,13 @@ namespace UJYA04_HFT_20222023.Endpoint
                 await context.Response.WriteAsJsonAsync(response);
             }));
 
+
+            app.UseCors(x => x
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithOrigins("http://localhost:33313"));
+
             app.UseRouting();
 
             app.UseAuthorization();

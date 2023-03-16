@@ -28,6 +28,8 @@ namespace UJYA04_HFT_202220232.JSClient
 
             app.UseRouting();
 
+            app.UseStaticFiles();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
