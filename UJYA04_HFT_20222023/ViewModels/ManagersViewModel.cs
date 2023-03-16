@@ -55,7 +55,7 @@ namespace UJYA04_HFT_20222023.WpfClient
         {
             if (!IsInDesignMode)
             {
-                Managers = new RestCollection<Managers>("http://localhost:24518/", "managers");
+                Managers = new RestCollection<Managers>("http://localhost:24518/", "managers", "hub");
 
                 CreateManagerCommand = new RelayCommand(() =>
                 {

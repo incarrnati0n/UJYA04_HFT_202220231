@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using UJYA04_HFT_20222023.Logic.LogicInterfaces;
+using Microsoft.AspNetCore.SignalR;
+using UJYA04_HFT_20222023.Endpoint.Services;
 
 namespace UJYA04_HFT_20222023.Endpoint.Controllers
 {
@@ -10,9 +12,13 @@ namespace UJYA04_HFT_20222023.Endpoint.Controllers
     public class PlayersController : ControllerBase
     {
         IPlayersLogic logic;
-        public PlayersController(IPlayersLogic logic)
+
+        private readonly IHubContext<SignalRHub> hub;
+
+        public PlayersController(IPlayersLogic logic, IHubContext<SignalRHub> hub)
         {
             this.logic = logic;
+            this.hub = hub;
         }
 
         [HttpGet]
@@ -31,18 +37,22 @@ namespace UJYA04_HFT_20222023.Endpoint.Controllers
         public void Create([FromBody] Players value)
         {
             this.logic.Create(value);
+            this.hub.Clients.All.SendAsync("PlayersCreated", value);
         }
 
         [HttpPut]
         public void Put([FromBody] Players value)
         {
             this.logic.Update(value);
+            this.hub.Clients.All.SendAsync("PlayersUpdated", value);
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            var playerToDelete = logic.Read(id);
             this.logic.Delete(id);
+            this.hub.Clients.All.SendAsync("PlayersDeleted", playerToDelete);
         }
     }
 }

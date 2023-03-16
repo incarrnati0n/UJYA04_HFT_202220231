@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using UJYA04_HFT_20222023.Endpoint.Services;
 using UJYA04_HFT_20222023.Logic.LogicClasses;
 using UJYA04_HFT_20222023.Logic.LogicInterfaces;
 using UJYA04_HFT_20222023.Models;
@@ -36,6 +37,9 @@ namespace UJYA04_HFT_20222023.Endpoint
             services.AddTransient<ITeamsLogic, TeamsLogic>();
             services.AddTransient<IManagersLogic, ManagersLogic>();
             services.AddTransient<IPlayersLogic, PlayersLogic>();
+
+            services.AddSignalR();
+
 
             services.AddControllers();
 
@@ -72,7 +76,8 @@ namespace UJYA04_HFT_20222023.Endpoint
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();   
+                endpoints.MapControllers();
+                endpoints.MapHub<SignalRHub>("/hub");
             });
         }
     }

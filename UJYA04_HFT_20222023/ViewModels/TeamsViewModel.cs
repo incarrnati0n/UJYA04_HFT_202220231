@@ -54,7 +54,7 @@ namespace UJYA04_HFT_20222023.WpfClient
         {
             if (!IsInDesignMode)
             {
-                Teams = new RestCollection<Teams>("http://localhost:24518/", "Teams");
+                Teams = new RestCollection<Teams>("http://localhost:24518/", "Teams", "hub");
 
                 CreateTeamCommand = new RelayCommand(() =>
                 {
