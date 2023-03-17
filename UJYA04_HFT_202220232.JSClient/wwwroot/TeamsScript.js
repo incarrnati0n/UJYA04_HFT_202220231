@@ -1,6 +1,32 @@
 ﻿let teams = [];
-
+let connection;
 getdata();
+setupSignalR();
+
+function setupSignalR() {
+    const connection = new signalR.HubConnectionBuilder()
+        .withUrl("http://localhost:24518/hub")
+        .configureLogging(signalR.LogLevel.Information)
+        .build();
+
+    connection.on("TeamsCreated", (user, message) => {
+        getdata();
+    });
+
+    connection.on("TeamsDeleted", (user, message) => {
+        getdata();
+    });
+
+    connection.onclose(async () => {
+            await start();
+    });
+    start();
+
+
+}
+
+
+
 
 async function getdata() {
     await fetch('http://localhost:24518/Teams/')
@@ -13,7 +39,15 @@ async function getdata() {
 }
 
 
-
+async function start() {
+    try {
+        await connection.start();
+        console.log("SignalR Connected.");
+    } catch (err) {
+        console.log(err);
+        setTimeout(start, 5000);
+    }
+};
 
 
 function display() {
