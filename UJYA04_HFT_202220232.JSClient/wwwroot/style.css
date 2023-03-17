@@ -1,2 +1,23 @@
 ﻿body {
+    background-image: url(image/cl23_2.jpg);
+    background-size: auto;
+    background-repeat: no-repeat;
 }
+
+h1 {
+    font-family: 'Times New Roman';
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.block {
+    width: 275px;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+
