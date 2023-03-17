@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Team manager</title>
+    <link rel="stylesheet" href="TeamStyle.css" /> 
+</head>
+<body>
+    <h1>Manage your favourite teams!</h1>
+    <div id="inputdiv">
+        <label>Team name</label>
+        <input type="text" id="teamname" />
+        <label>Team Founded Year</label>
+        <input type="text" id="teamfoundedyear" />
+        <label>Team stadium name</label>
+        <input type="text" id="teamstadiumname" />
+        <label>Team owner</label>
+        <input type="text" id="teamowner"/>
+        <button type="button" onclick="create()">Add Team</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Founded Year</th>
+                <th>Stadium Name</th>
+                <th>Owner</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="databoard">
+        </tbody>
+    </table>
+    <script src="TeamsScript.js"></script>
+</body>
+</html>
