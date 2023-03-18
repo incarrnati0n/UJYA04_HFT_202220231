@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Player manager</title>
+    <link rel="stylesheet" href="PlayersStyle.css" />
+</head>
+<body>
+    <h1>Manage your favourite players!</h1>
+    <div id="inputdiv">
+        <label>Player ID</label>
+        <input type="text" id="playerid" />
+        <label>Player name</label>
+        <input type="text" id="playername" />
+        <label>Player Shirt Number</label>
+        <input type="text" id="playershirtnum" />
+        <label>Player Rating</label>
+        <input type="text" id="playerrating" />
+        <label>Player Age</label>
+        <input type="text" id="playerage" />
+        <button type="button" onclick="create()">Add Player</button>
+    </div>
+    <div id="updatediv">
+        <label>Player ID</label>
+        <input type="text" id="playeridupdate" />
+        <label>Player name</label>
+        <input type="text" id="playernameupdate" />
+        <label>Player Shirt Number</label>
+        <input type="text" id="playershirtnumupdate" />
+        <label>Player Rating</label>
+        <input type="text" id="playerratingupdate" />
+        <label>Player Age</label>
+        <input type="text" id="playerageupdate" />
+        <button type="button" onclick="update()">Update Player</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Shirt Number</th>
+                <th>Rating</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="databoard">
+        </tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="PlayersScript.js"></script>
+</body>
+</html>

@@ -1,5 +1,8 @@
 ﻿let teams = [];
 let connection;
+
+let teamIdToUpdate = -1;
+
 getdata();
 setupSignalR();
 
@@ -17,12 +20,14 @@ function setupSignalR() {
         getdata();
     });
 
+    connection.on("TeamsUpdated", (user, message) => {
+        getdata();
+    });
+
     connection.onclose(async () => {
             await start();
     });
     start();
-
-
 }
 
 
@@ -58,12 +63,45 @@ function display() {
             + t.teamName + "</td><td>"
             + t.teamFoundedYear + "</td><td>"
             + t.teamStadiumName + "</td><td>"
-            + t.teamOwner + "</td><td>" + `<button type="button" onclick="remove(${t.teamId})"/> Delete` + "</td></tr>";
+            + t.teamOwner + "</td><td>"
+            + `<button type="button" onclick="remove(${t.teamId})"/> Delete` 
+            + `<button type="button" onclick="showupdate(${t.teamId})"/> Update` 
+            + "</td></tr>";
     });
 }
 
+function showupdate(id) {
+    document.getElementById('teamidupdate').value = teams.find(t => t['teamId'] == id)['teamId'];
+    document.getElementById('teamnameupdate').value = teams.find(t => t['teamId'] == id)['teamName'];
+    document.getElementById('teamfoundedyearupdate').value = teams.find(t => t['teamId'] == id)['teamFoundedYear'];
+    document.getElementById('teamstadiumnameupdate').value = teams.find(t => t['teamId'] == id)['teamStadiumName'];
+    document.getElementById('teamownerupdate').value = teams.find(t => t['teamId'] == id)['teamOwner'];
+    document.getElementById('updatediv').style.display = 'flex';
+    teamIdToUpdate = id;
+}
 
 
+function update() {
+    document.getElementById('updatediv').style.display = 'none';
+    let name = document.getElementById('teamnameupdate').value;
+    let year = document.getElementById('teamfoundedyearupdate').value;
+    let stadium = document.getElementById('teamstadiumnameupdate').value;
+    let owner = document.getElementById('teamownerupdate').value;
+    fetch('http://localhost:24518/Teams', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(
+            { teamId: teamIdToUpdate, teamName: name, teamFoundedYear: year, teamStadiumName: stadium, teamOwner: owner }),
+    })
+        .then(response => response)
+        .then(data => {
+            console.log('Success:', data);
+            getdata();
+        })
+        .catch((error) => { console.error('Error:', error); });
+}
 
 
 function remove(id) {
