@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Manager manager</title>
+    <link rel="stylesheet" href="ManagersStyle.css" />
+</head>
+<body>
+    <h1>Manage your favourite managers!</h1>
+    <div id="inputdiv">
+        <label>Manager ID</label>
+        <input type="text" id="managerid" />
+        <label>Manager name</label>
+        <input type="text" id="managername" />
+        <label>Manager Age</label>
+        <input type="text" id="managerage" />
+        <label>Manager Salary</label>
+        <input type="text" id="managersalary" />
+        <button type="button" onclick="create()">Add Manager</button>
+    </div>
+    <div id="updatediv">
+        <label>Manager ID</label>
+        <input type="text" id="manageridupdate" />
+        <label>Manager name</label>
+        <input type="text" id="managernameupdate" />
+        <label>Manager Age</label>
+        <input type="text" id="managerageupdate" />
+        <label>Manager Salary</label>
+        <input type="text" id="managersalaryupdate" />
+        <button type="button" onclick="update()">Update Manager</button>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="databoard">
+        </tbody>
+    </table>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="ManagersScript.js"></script>
+</body>
+</html>
