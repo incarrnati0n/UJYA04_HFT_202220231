@@ -25,6 +25,7 @@ namespace UJYA04_HFT_20222023.Models
         [Range(1,99)]
         public int Rating { get; set; }
         [NotMapped]
+        [JsonIgnore]
         public virtual Teams Team { get; set; }
 
         public Players()

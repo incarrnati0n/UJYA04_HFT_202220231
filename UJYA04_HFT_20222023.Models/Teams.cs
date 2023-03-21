@@ -26,7 +26,6 @@ namespace UJYA04_HFT_20222023.Models
         [NotMapped]
         [JsonIgnore]
         public virtual Managers Manager { get; set; }
-        [JsonIgnore]
         [NotMapped]
         public virtual ICollection<Players> Player { get; set; }
 

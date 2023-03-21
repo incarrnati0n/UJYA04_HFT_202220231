@@ -29,6 +29,9 @@ namespace UJYA04_HFT_20222023.WpfClient
                     {
                         TeamName = value.TeamName,
                         TeamId = value.TeamId,
+                        TeamFoundedYear = value.TeamFoundedYear,
+                        TeamOwner = value.TeamOwner,
+                        TeamStadiumName = value.TeamStadiumName,
                     };
                 }
                 OnPropertyChanged();

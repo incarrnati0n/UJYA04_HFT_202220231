@@ -30,6 +30,9 @@ namespace UJYA04_HFT_20222023.WpfClient
                     {
                         ManagerName = value.ManagerName,
                         ManagerId = value.ManagerId,
+                        ManagerAge = value.ManagerAge,
+                        ManagerSalary = value.ManagerSalary,
+                        
                     };
                 }
                 OnPropertyChanged();
@@ -64,10 +67,10 @@ namespace UJYA04_HFT_20222023.WpfClient
                         ManagerName = SelectedManager.ManagerName,
                         ManagerAge = SelectedManager.ManagerAge,
                         ManagerSalary = SelectedManager.ManagerSalary,
-                        Team = new Teams()
+                        /*Team = new Teams()
                         {
                             TeamFoundedYear = r.Next(1000, 2001) 
-                        }
+                        }*/
                     });
                 });
 

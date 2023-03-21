@@ -32,6 +32,9 @@ namespace UJYA04_HFT_20222023.WpfClient
                     {
                         PlayerName = value.PlayerName,
                         PlayerId = value.PlayerId,
+                        PlayerAge = value.PlayerAge,
+                        PlayerShirtNum = value.PlayerShirtNum,
+                        Rating = value.Rating,
                     };
                 }
                 OnPropertyChanged();
@@ -67,10 +70,10 @@ namespace UJYA04_HFT_20222023.WpfClient
                         PlayerAge = SelectedPlayer.PlayerAge,
                         PlayerShirtNum = SelectedPlayer.PlayerShirtNum,
                         Rating = SelectedPlayer.Rating,
-                        Team = new Teams()
+                        /*Team = new Teams()
                         {
                             TeamFoundedYear = r.Next(1000, 2001),
-                        }
+                        }*/
                     });
                 });
 
