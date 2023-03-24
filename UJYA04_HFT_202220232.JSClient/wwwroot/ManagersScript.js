@@ -118,9 +118,9 @@ function remove(id) {
 
 function create() {
     let id = document.getElementById('managerid').value;
-    let name = document.getElementById('managernameupdate').value;
-    let age = document.getElementById('managerageupdate').value;
-    let salary = document.getElementById('managersalaryupdate').value;
+    let name = document.getElementById('managername').value;
+    let age = document.getElementById('managerage').value;
+    let salary = document.getElementById('managersalary').value;
     fetch('http://localhost:24518/Managers', {
         method: 'POST',
         headers: {
@@ -128,7 +128,7 @@ function create() {
         },
         body: JSON.stringify(
             { managerId: id, managerName: name, managerAge: age, managerSalary: salary }),
-    })
+        })
         .then(response => response)
         .then(data => {
             console.log('Success:', data);
