@@ -38,7 +38,7 @@ async function getdata() {
         .then(x => x.json())
         .then(y => {
             players = y;
-            //console.log(teams);
+            console.log(players);
             display();
         });
 }
@@ -85,7 +85,7 @@ function update() {
     document.getElementById('updatediv').style.display = 'none';
     let name = document.getElementById('playernameupdate').value;
     let shirtnum = document.getElementById('playershirtnumupdate').value;
-    let rating = document.getElementById('playerratingupdate').value;
+    let rating_ = document.getElementById('playerratingupdate').value;
     let age = document.getElementById('playerageupdate').value;
     fetch('http://localhost:24518/Players', {
         method: 'PUT',
@@ -93,7 +93,7 @@ function update() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(
-            { playerId: playerIdToUpdate, playerName: name, playerShirtNumber: shirtnum, playerRating: rating, playerAge: age }),
+            { playerId: playerIdToUpdate, playerName: name, playerShirtNum: shirtnum, rating: rating_, playerAge: age }),
     })
         .then(response => response)
         .then(data => {
@@ -123,7 +123,7 @@ function create() {
     let id = document.getElementById('playerid').value;
     let name = document.getElementById('playername').value;
     let shirtnum = document.getElementById('playershirtnum').value;
-    let rating = document.getElementById('playerrating').value;
+    let rating_ = document.getElementById('playerrating').value;
     let age = document.getElementById('playerage').value;
     fetch('http://localhost:24518/Players', {
         method: 'POST',
@@ -131,7 +131,7 @@ function create() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(
-            { playerId: id, playerName: name, playerShirtNumber: shirtnum, playerRating: rating, playerAge: age }),
+            { playerId: id, playerName: name, playerShirtNum: shirtnum, rating: rating_, playerAge: age }),
     })
         .then(response => response)
         .then(data => {
