@@ -38,7 +38,7 @@ async function getdata() {
         .then(x => x.json())
         .then(y => {
             players = y;
-            console.log(players);
+            //console.log(players);
             display();
         });
 }
