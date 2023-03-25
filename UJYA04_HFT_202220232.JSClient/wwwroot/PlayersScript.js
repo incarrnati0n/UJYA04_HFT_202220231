@@ -7,7 +7,7 @@ getdata();
 setupSignalR();
 
 function setupSignalR() {
-    const connection = new signalR.HubConnectionBuilder()
+    connection = new signalR.HubConnectionBuilder()
         .withUrl("http://localhost:24518/hub")
         .configureLogging(signalR.LogLevel.Information)
         .build();
