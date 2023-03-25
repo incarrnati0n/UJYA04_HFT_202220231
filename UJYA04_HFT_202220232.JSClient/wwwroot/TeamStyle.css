@@ -19,8 +19,8 @@ table{
     background-repeat: no-repeat;
 }*/
 
-table, th, td {
-    border: 1px solid white;
+table, th, td, tr {
+    border: 1px solid black;
 }
 
 
