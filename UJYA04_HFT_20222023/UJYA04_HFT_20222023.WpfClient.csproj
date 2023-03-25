@@ -8,6 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="image\cl23_2.jpg" />
+    <None Remove="image\footy.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="image\cl23_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Resource>
+    <Content Include="image\footy.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\UJYA04_HFT_20222023.Models\UJYA04_HFT_20222023.Models.csproj" />
   </ItemGroup>
 
