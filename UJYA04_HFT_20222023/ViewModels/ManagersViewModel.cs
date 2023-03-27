@@ -1,11 +1,7 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using UJYA04_HFT_20222023.Models;
@@ -67,10 +63,6 @@ namespace UJYA04_HFT_20222023.WpfClient
                         ManagerName = SelectedManager.ManagerName,
                         ManagerAge = SelectedManager.ManagerAge,
                         ManagerSalary = SelectedManager.ManagerSalary,
-                        /*Team = new Teams()
-                        {
-                            TeamFoundedYear = r.Next(1000, 2001) 
-                        }*/
                     });
                 });
 
