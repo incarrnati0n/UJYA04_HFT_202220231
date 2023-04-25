@@ -15,6 +15,7 @@ namespace UJYA04_HFT_20222023.WpfClient
 {
     public class NonCrudViewModel : ObservableRecipient
     {
+
         public static RestService rest;
 
         ObservableCollection<TeamInfo> AverageClubRating;
@@ -38,7 +39,7 @@ namespace UJYA04_HFT_20222023.WpfClient
 
         public NonCrudViewModel()
         {
-            rest = new RestService("http://localhost:24518/", "stat");
+            rest = new RestService("http://localhost:24518/", "Stat");
 
             ListPlayerByShirtNumber = new RelayCommand(() =>
             {
