@@ -40,10 +40,11 @@ namespace UJYA04_HFT_20222023.WpfClient
         {
             rest = new RestService("http://localhost:24518/", "stat");
 
-            //ListPlayerByShirtNumber = new RelayCommand(() =>
-            //{
-            //    var a = rest.Get<Managers>(2, "/stat/ListPlayerByShirtNumber");
-            //});
+            ListPlayerByShirtNumber = new RelayCommand(() =>
+            {
+                int shirtnumber = 29;
+                var a = rest.Get<Managers>($"/stat/ListPlayerByShirtNumber/{shirtnumber}");
+            });
 
             AverageRatingInClub = new RelayCommand(() =>
             {
@@ -57,6 +58,18 @@ namespace UJYA04_HFT_20222023.WpfClient
                 Under25 = new ObservableCollection<string>(a);
             });
 
+            ManagerName = new RelayCommand(() =>
+            {
+                int managerid = 1;
+                var a = rest.Get<string>($"/stat/ManagerName/{managerid}");
+            });
+
+            HighestRatingByTeamAndAge = new RelayCommand(() =>
+            {
+                string teamname = "Chelsea FC";
+                int age = 23;
+                var a = rest.Get<Players>($"/stat/HighestRatingByTeamAndAge/{age}, {teamname}");
+            });
 
         }
 
