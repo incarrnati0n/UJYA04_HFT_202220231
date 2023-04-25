@@ -19,6 +19,7 @@
             <Button Content="Teams" Padding="10" Margin="10" FontSize="16" FontWeight="DemiBold" Click="Button_Click_Teams" />
             <Button Content="Players" Padding="10" Margin="10" FontSize="16" FontWeight="DemiBold" Click="Button_Click_Players" />
             <Button Content="Managers" Padding="10" Margin="10" FontSize="16" FontWeight="DemiBold" Click="Button_Click_Managers" />
+            <Button Content="Non Crud" Padding="10" Margin="10" FontSize="16" FontWeight="DemiBold" Click="Button_Click_NC"/>
             <Button Content="Exit" Padding="10" Margin="10" FontSize="16" FontWeight="DemiBold" Click="Button_Click_Exit"/>
         </StackPanel>
     </Grid>

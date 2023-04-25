@@ -48,5 +48,11 @@ namespace UJYA04_HFT_20222023
             TeamsWindow teamsWindow = new TeamsWindow();
             teamsWindow.Show();
         }
+
+        private void Button_Click_NC(object sender, RoutedEventArgs e)
+        {
+            NonCrudWindow nonCrudWindow = new NonCrudWindow();
+            nonCrudWindow.Show();
+        }
     }
 }

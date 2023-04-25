@@ -10,7 +10,7 @@ namespace UJYA04_HFT_20222023.WpfClient
 {
     public class ManagersViewModel : ObservableRecipient
     {
-        public static Random r = new Random();
+        //public static Random r = new Random();
         public RestCollection<Managers> Managers { get; set; }
 
         private Managers selectedManager;
