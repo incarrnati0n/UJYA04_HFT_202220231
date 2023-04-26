@@ -39,37 +39,37 @@ namespace UJYA04_HFT_20222023.WpfClient
 
         public NonCrudViewModel()
         {
-            rest = new RestService("http://localhost:24518/", "Stat");
+            rest = new RestService("http://localhost:24518/");
 
             ListPlayerByShirtNumber = new RelayCommand(() =>
             {
                 int shirtnumber = 29;
-                var a = rest.Get<Managers>($"/stat/ListPlayerByShirtNumber/{shirtnumber}");
+                var a = rest.Get<Managers>($"http://localhost:24518/stat/ListPlayerByShirtNumber/{shirtnumber}");
             });
 
             AverageRatingInClub = new RelayCommand(() =>
             {
-                var a = rest.Get<TeamInfo>("/stat/AverageRatingInClub");
+                var a = rest.Get<TeamInfo>("http://localhost:24518/stat/AverageRatingInClub");
                 AverageClubRating = new ObservableCollection<TeamInfo>(a);
             });
 
             TeamsOfPlayersUnder25 = new RelayCommand(() =>
             {
-                var a = rest.Get<string>("/stat/TeamsOfPlayersUnder25");
+                var a = rest.Get<string>("http://localhost:24518/stat/TeamsOfPlayersUnder25");
                 Under25 = new ObservableCollection<string>(a);
             });
 
             ManagerName = new RelayCommand(() =>
             {
                 int managerid = 1;
-                var a = rest.Get<string>($"/stat/ManagerName/{managerid}");
+                var a = rest.Get<string>($"http://localhost:24518/stat/ManagerName/{managerid}");
             });
 
             HighestRatingByTeamAndAge = new RelayCommand(() =>
             {
                 string teamname = "Chelsea FC";
                 int age = 23;
-                var a = rest.Get<Players>($"/stat/HighestRatingByTeamAndAge/{age}, {teamname}");
+                var a = rest.Get<Players>($"http://localhost:24518/stat/HighestRatingByTeamAndAge/{age}, {teamname}");
             });
 
         }
