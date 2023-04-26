@@ -15,25 +15,29 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <ListBox Grid.Column="0">
-
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    
+                </DataTemplate>
+            </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Grid.Column="1" Margin="0,0,0,10">
             <Label Background="LightBlue" Content="Team Manager Name" HorizontalContentAlignment="Center" Padding="10"/>
             <TextBox x:Name="tb_managername"   Padding="10" />
-            <Button Content="Execute Command" Padding="10" Margin="0, 0, 0, 10"/>
+            <Button Content="Execute Command" Command="{Binding ManagerName}" Padding="10" Margin="0, 0, 0, 10"/>
             <Label Background="LightBlue" Content="Get team from shirtnumber" HorizontalContentAlignment="Center" Padding="10"/>
             <TextBox x:Name="tb_shirtnum" Padding="10"/>
-            <Button Content="Execute Command" Padding="10" Margin="0, 0, 0, 10"/>
+            <Button Content="Execute Command" Command="{Binding ListPlayerByShirtNumber}" Padding="10" Margin="0, 0, 0, 10"/>
             <Label Content="Team that has an under 25 player(s)" Background="LightBlue" HorizontalContentAlignment="Center" Padding="10"/>
-            <Button Content="Execute Command" Padding="10" Margin="0, 0, 0, 10"/>
+            <Button Content="Execute Command" Command="{Binding TeamsOfPlayersUnder25}" Padding="10" Margin="0, 0, 0, 10"/>
             <Label Content="Average player rating in teams" Background="LightBlue" HorizontalContentAlignment="Center" Padding="10"/>
-            <Button Content="Execute Command" Padding="10" Margin="0, 0, 0, 10"/>
+            <Button Content="Execute Command" Command="{Binding AverageRatingInClub}" Padding="10" Margin="0, 0, 0, 10"/>
             <Label Content="Highest rating by age in team (age/teamname)" Background="LightBlue" HorizontalContentAlignment="Center" Padding="10"/>
             <StackPanel Orientation="Horizontal">
                 <TextBox x:Name="tb_age" Width="200" Height="30" HorizontalAlignment="Left"/>
                 <TextBox x:Name="tb_teamname" Width="200" Height="30" HorizontalAlignment="Right" />
             </StackPanel>
-            <Button Content="Execute Command" Padding="10" Margin="0, 0, 0, 10"/>
+            <Button Content="Execute Command" Command="{Binding HighestRatingByTeamAndAge}" Padding="10" Margin="0, 0, 0, 10"/>
         </StackPanel>
     </Grid>
 </Window>
