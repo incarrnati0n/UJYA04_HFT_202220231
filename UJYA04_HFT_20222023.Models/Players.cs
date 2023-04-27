@@ -6,6 +6,7 @@ using System.Text.Json.Serialization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Remoting;
 
 namespace UJYA04_HFT_20222023.Models
 {
@@ -43,5 +44,8 @@ namespace UJYA04_HFT_20222023.Models
             PlayerAge = int.Parse(split[4]);
             Rating = int.Parse(split[5]);
         }
+
+
+
     }
 }

@@ -36,6 +36,16 @@ namespace UJYA04_HFT_20222023.Models
             ManagerSalary = double.Parse(split[4]);
         }
 
-
+        public override bool Equals(object obj)
+        {
+            if (obj is not Managers)
+            {
+                return false;
+            }
+            else
+            {
+                return (ManagerName == (obj as Managers).ManagerName);
+            }
+        }
     }
 }
