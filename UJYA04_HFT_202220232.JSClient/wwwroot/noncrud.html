@@ -2,9 +2,61 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>NonCrud methods</title>
+    <link rel="stylesheet" href="NonCrudStyle.css"/>
 </head>
 <body>
+    <h1>Non Crud Methods</h1>
+    <table>
+        <tr>
+            <th>Function Name</th>
+            <th>Required input</th>
+            <th>Input 1</th>
+            <th>Input 2</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>Manager from shirtnumber</td>
+            <td>shirtnumber</td>
+            <td><input type="text" id="shnum_input"></td>
+            <td></td>
+            <td><button type="button" onclick="getManager()">Execute Command</button></td>
+        </tr>
+        <tr>
+            <td>Teams with players under 25</td>
+            <td></td>
+            <td colspan="2">This row doesn't have any input fields</td>
+            <td><button>Execute Command</button></td>
+        </tr>
+        <tr>
+            <td>Club rating</td>
+            <td></td>
+            <td colspan="2">This row doesn't have any input fields</td>
+            <td><button>Execute Command</button></td>
+        </tr>
+        <tr>
+            <td>Get manager name</td>
+            <td>team ID</td>
+            <td><input type="text" id="teamid_input"></td>
+            <td></td>
+            <td><button type="button" onclick="getManagerName()">Execute Command</button></td>
+        </tr>
+        <tr>
+            <td>Highest rated by team and age</td>
+            <td>age, teamname</td>
+            <td><input type="text" id="age_input"></td>
+            <td><input type="text" id="teamname_input"></td>
+            <td><button type="button" onclick="highestRated()">Execute Command</button></td>
+        </tr>
+    </table>
 
+    <div id="resultdiv">
+
+    </div>
+
+
+
+
+    <script src="NonCrudScript.js"></script>
 </body>
 </html>

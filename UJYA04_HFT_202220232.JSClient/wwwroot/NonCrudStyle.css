@@ -1,2 +1,33 @@
-﻿body {
+﻿table, th, td, tr {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+th, td {
+    padding: 5px;
+}
+
+
+table button {
+    padding: 2px;
+}
+
+table {
+    width: 75%;
+    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+}
+
+button{
+    width: 150px;
 }
