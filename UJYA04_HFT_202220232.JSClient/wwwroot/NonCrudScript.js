@@ -1,6 +1,7 @@
 ﻿let manager;
 let managername;
 let player;
+let avg
 
 function getManager() {
     let id = document.getElementById("shnum_input");
@@ -10,6 +11,16 @@ function getManager() {
             manager = y;
             console.log(manager);
             managerDisplay();
+        })
+}
+
+function averageRating() {
+    fetch(`http://localhost:24518/stat/AverageRatingInClub/`)
+        .then(x => x.json())
+        .then(y => {
+            avg = y;
+            console.log(avg);
+            averageDisplay();
         })
 }
 
@@ -27,15 +38,18 @@ function getManagerName() {
         })
 }
 
+// ez is fos
 function highestRated() {
     let age = document.getElementById("age_input");
     let teamname = document.getElementById("teamname_input");
     fetch(`http://localhost:24518/stat/HighestRatingByTeamAndAge/${age},${teamname}`)
         .then(x => x.json())
         .then(y => {
-            playername = y;
-            console.log(playername);
-            playerDisplay();
+            player = y;
+            console.log(player);
+            document.getElementById('resultdiv').innerHTML = "";
+            document.getElementById('resultdiv').innerHTML =
+                "<label>" + "Playername: " + player.playerName + "</label>"; 
         })
 }
 
@@ -48,11 +62,11 @@ function managerDisplay() {
     });
 }
 
-function playerDisplay() {
+function averageDisplay() {
     document.getElementById('resultdiv').innerHTML = "";
-    player.forEach(t => {
+    avg.forEach(t => {
         document.getElementById('resultdiv').innerHTML +=
-            "<tr><td>" + "The queried player's name: " + t.playername + " rating: " +  t.rating + "</td><td>"
-            + "</td></tr>";
-    });
+            "<tr><td>" + "The teamname:" + t.teamName + "</td><td>" +
+            "<tr><td>" + "The rating: " + t.avgRating + "</td></tr>";
+    })
 }
