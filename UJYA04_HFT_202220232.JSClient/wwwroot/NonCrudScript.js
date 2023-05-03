@@ -1,7 +1,8 @@
 ﻿let manager;
 let managername;
 let player;
-let avg
+let avg;
+let under25;
 
 function getManager() {
     let id = document.getElementById("shnum_input");
@@ -51,6 +52,19 @@ function highestRated() {
         })
 }
 
+
+function teamWithU25() {
+    fetch(`http://localhost:24518/stat/TeamsOfPlayersUnder25`)
+        .then(x => x.json())
+        .then(y => {
+            under25 = y;
+            console.log(under25);
+            under25Display();
+        })
+}
+
+
+
 function managerDisplay() {
     document.getElementById('resultdiv').innerHTML = "";
     manager.forEach(t => {
@@ -76,3 +90,12 @@ function highestRatedDisplay() {
             "<tr><td>" + "The playername:" + t.playerName + "</td></tr>";
     })
 }
+
+function under25Display() {
+    document.getElementById('resultdiv').innerHTML = "";
+    under25.forEach(t => {
+        document.getElementById('resultdiv').innerHTML +=
+            "<tr><td>" + "The teamname: " + t.teamName + "</td></tr>";
+    })
+}
+
