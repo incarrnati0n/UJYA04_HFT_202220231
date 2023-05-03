@@ -95,7 +95,7 @@ function under25Display() {
     document.getElementById('resultdiv').innerHTML = "";
     under25.forEach(t => {
         document.getElementById('resultdiv').innerHTML +=
-            "<tr><td>" + "The teamname: " + t.teamName + "</td></tr>";
+            "<tr><td>" + "The teamname: " + t + " " + "</td></tr>";
     })
 }
 
