@@ -38,18 +38,16 @@ function getManagerName() {
         })
 }
 
-// ez is fos
+
 function highestRated() {
-    let age = document.getElementById("age_input");
-    let teamname = document.getElementById("teamname_input");
+    let age = document.getElementById("age_input").value;
+    let teamname = document.getElementById("teamname_input").value;
     fetch(`http://localhost:24518/stat/HighestRatingByTeamAndAge/${age},${teamname}`)
         .then(x => x.json())
         .then(y => {
             player = y;
             console.log(player);
-            document.getElementById('resultdiv').innerHTML = "";
-            document.getElementById('resultdiv').innerHTML =
-                "<label>" + "Playername: " + player.playerName + "</label>"; 
+            highestRatedDisplay();
         })
 }
 
@@ -68,5 +66,13 @@ function averageDisplay() {
         document.getElementById('resultdiv').innerHTML +=
             "<tr><td>" + "The teamname:" + t.teamName + "</td><td>" +
             "<tr><td>" + "The rating: " + t.avgRating + "</td></tr>";
+    })
+}
+
+function highestRatedDisplay() {
+    document.getElementById('resultdiv').innerHTML = "";
+    player.forEach(t => {
+        document.getElementById('resultdiv').innerHTML +=
+            "<tr><td>" + "The playername:" + t.playerName + "</td></tr>";
     })
 }
