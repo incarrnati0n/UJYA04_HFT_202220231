@@ -91,9 +91,11 @@ function highestRatedDisplay() {
 
 function under25Display() {
     document.getElementById('resultdiv').innerHTML = "";
-    under25.forEach(t => {
+    document.getElementById('resultdiv').innerHTML += "<Label>The teams with under 25 players: ";
+    under25.forEach((t, index) => {
         document.getElementById('resultdiv').innerHTML +=
-            "<Label>" + "The team's name: " + t + " " + "</Label>";
+            t + ", "; 
     })
+    document.getElementById('resultdiv').innerHTML += "</Label>";
 }
 
