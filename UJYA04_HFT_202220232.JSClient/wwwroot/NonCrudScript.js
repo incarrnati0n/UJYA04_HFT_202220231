@@ -69,8 +69,7 @@ function managerDisplay() {
     document.getElementById('resultdiv').innerHTML = "";
     manager.forEach(t => {
         document.getElementById('resultdiv').innerHTML +=
-            "<tr><td>" + "The queried manager's name: " + t.managerName  + "</td><td>"
-            + "</td></tr>";
+            "<Label>" + "The queried manager's name: " + t.managerName + "</Label>";
     });
 }
 
@@ -78,8 +77,7 @@ function averageDisplay() {
     document.getElementById('resultdiv').innerHTML = "";
     avg.forEach(t => {
         document.getElementById('resultdiv').innerHTML +=
-            "<tr><td>" + "The teamname:" + t.teamName + "</td><td>" +
-            "<tr><td>" + "The rating: " + t.avgRating + "</td></tr>";
+            "<Label> The team's name: " + t.teamName + " average rating: " + t.avgRating + "</Label>";
     })
 }
 
@@ -87,7 +85,7 @@ function highestRatedDisplay() {
     document.getElementById('resultdiv').innerHTML = "";
     player.forEach(t => {
         document.getElementById('resultdiv').innerHTML +=
-            "<tr><td>" + "The playername:" + t.playerName + "</td></tr>";
+            "<Label>" + "The player's name: " + t.playerName + "</Label>";
     })
 }
 
@@ -95,7 +93,7 @@ function under25Display() {
     document.getElementById('resultdiv').innerHTML = "";
     under25.forEach(t => {
         document.getElementById('resultdiv').innerHTML +=
-            "<tr><td>" + "The teamname: " + t + " " + "</td></tr>";
+            "<Label>" + "The team's name: " + t + " " + "</Label>";
     })
 }
 
